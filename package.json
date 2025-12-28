@@ -1,0 +1,15 @@
+{
+  "name": "mannakorn",
+  "version": "1.0.0",
+  "description": "Mannakorn lokal app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

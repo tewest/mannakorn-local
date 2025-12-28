@@ -1,0 +1,120 @@
+:root{
+  --card-max-width: 960px;
+  --card-padding: 64px;
+  --accent: rgba(212,175,55,0.35);
+  --text-dark: #4A3728;
+  --blue: #1B3A6B;
+  --bg-start: #3b5760;
+  --bg-end: #58707a;
+}
+
+/* Page */
+body {
+    font-family: 'Georgia', serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
+    margin: 0;
+    padding: 20px;
+}
+
+/* Card */
+#card {
+    padding: var(--card-padding);
+    border: 1.5px solid var(--accent);
+    width: 94%;
+    max-width: var(--card-max-width);
+    text-align: center;
+    background: rgba(250,244,235,0.94);
+    border-radius: 18px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255,255,255,0.35);
+    position: relative;
+    color: var(--text-dark);
+    line-height: 1.45;
+    box-sizing: border-box;
+    margin-bottom: 22px; /* ekstra avstand før knappen */
+   
+}
+
+/* Icon */
+#icon {
+    display: block;
+    font-size: clamp(36px, 8vw, 80px);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+    line-height: 1;
+}
+
+/* Photo (optional) */
+#photo {
+    display: none;
+    width: 100%;
+    height: auto;
+    max-height: 55vh;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 22px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+/* Verse text */
+#verse{
+  margin: 0 0 12px 0;
+  font-style: italic;
+  font-size: clamp(1.6rem, 5vw, 3rem);
+  padding: 0 8px;
+  word-break: break-word;
+}
+
+/* Reference */
+#ref {
+    display: block;
+    margin-top: 16px;
+    font-size: clamp(1rem, 2.2vw, 1.25rem);
+    color: var(--blue);
+    font-weight: 700;
+    border-top: 1px solid rgba(212,175,55,0.28);
+    padding-top: 14px;
+    margin-bottom: 8px; /* litt ekstra luft i kortet */
+}
+
+/* Button */
+#newBtn{
+  margin-top: 24px;
+  padding: 28px 64px;
+  min-width: 420px;
+  cursor: pointer;
+  background: linear-gradient(135deg, rgba(212,175,55,0.86) 0%, #E6C75D 100%);
+  color: var(--blue);
+  border: 1px solid rgba(74,55,40,0.14);
+  border-radius: 40px;
+  font-size: clamp(1.25rem, 3.6vw, 1.6rem);
+  font-weight: 700;
+  transition: transform .18s ease, box-shadow .18s ease;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.16);
+}
+
+#newBtn:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,0,0,0.14); }
+#newBtn:active { transform: translateY(0); }
+
+/* Larger screens: mer padding og større tekst */
+@media (min-width: 1200px){
+  :root { --card-padding: 100px; }
+  #verse { font-size: clamp(1.9rem, 1.8vw, 3.4rem); }
+  #ref { font-size: 1.4rem; }
+  #photo { max-height: 60vh; }
+  #newBtn { min-width: 480px; padding: 30px 72px; font-size: 1.75rem; }
+}
+
+/* Små skjermer: større, mer lesbar tekst */
+@media (max-width: 420px){
+  :root { --card-padding: 28px; }
+  #card { padding: var(--card-padding); }
+  #icon { font-size: clamp(48px, 14vw, 72px); margin-bottom: 14px; }
+  #verse { font-size: clamp(1.9rem, 8.5vw, 2.6rem); line-height: 1.35; }
+  #ref { font-size: 1.05rem; padding-top: 10px; margin-top: 10px; }
+  #newBtn { padding: 20px 36px; font-size: 1.25rem; border-radius: 32px; min-width: 260px; }
+}
