@@ -6,7 +6,9 @@ const PORT = 3000;
 app.use(express.static("public"));
 
 app.get("/api/random", (req, res) => {
-    const verses = JSON.parse(fs.readFileSync("./data/verses.json"));
+    const path = require('path');
+    const dataPath = path.join(__dirname, './data/verses.json');
+    const verses = JSON.parse(fs.readFileSync(dataPath));
     const random = verses[Math.floor(Math.random() * verses.length)];
     res.json(random);
 });
