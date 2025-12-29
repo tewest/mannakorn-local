@@ -1,0 +1,9 @@
+{
+  "name": "mannakorn",
+  "main": "_worker.js",
+  "compatibility_date": "2025-12-29",
+  "account_id": "299546ea04dcb13390202ac1fa63839b",
+  "assets": {
+    "directory": "public"
+  }
+}
